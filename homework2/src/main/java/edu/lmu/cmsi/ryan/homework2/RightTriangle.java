@@ -36,9 +36,9 @@ public class RightTriangle {
 		return this.perimeter;
 	}
 
-	//calculates the locations of the three points of the triangle. Then performs the cross product
-	//between each point and a point of the triangle. If all the cross products are greater than zero or
-	// less than zero, then the point is inside the traingle. Otherwise, it is out of the triangle
+	//calculates the locations of the three points of the triangle. If the point is on one of the line segments
+	//then it is considered to not be in the triangle. 
+	//method performs arithmetic operations that check to see if the point lies inside the triangle
 	public boolean containsPoint(Point p) {
 		boolean contains = false;
 		double upperX = this.getTopLeft().getX();
