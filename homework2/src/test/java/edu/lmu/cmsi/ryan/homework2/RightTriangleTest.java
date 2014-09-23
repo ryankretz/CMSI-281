@@ -10,21 +10,23 @@ public class RightTriangleTest {
 
 	@Test
 	public void testGetters() {
-		RightTriangle r = new RightTriangle(new Point(5.0, 5.0), 3.0, 4.0);
+		RightTriangle r = new RightTriangle(new Point(5.0, 5.0), 4.0, 3.0);
 		Point rTop = r.getTopLeft();
 		Point topLeft = new Point(5.0, 5.0);
 		double c = Math.sqrt(3.0*3.0 + 4.0 * 4.0);
 		double perim = c + 3.0 + 4.0;
 		assertEquals("failure - did not return top left corner point", true, rTop.equalTo(topLeft));
 		assertEquals("failure - did not calculate area correctly", 0.5*3.0*4.0, r.getArea(), 0);
-		assertEquals("failure - did not calculate perimeter correctly", perim, r.getPerimeter(), 0 );
+		assertEquals("failure - did not calculate perimeter correctly", perim, r.getPerimeter(), 0);
 	}
 
 	@Test
 	public void testContains() {
-		RightTriangle r = new RightTriangle(new Point(5.0, 5.0), 3.0, 4.0);
-		assertEquals("failure - did not check for contains point correctly", true, r.containsPoint(new Point(6.0, 6.0)));
-
+		RightTriangle tri = new RightTriangle(new Point(4.0, 5.0), 10.0, 10.0);
+		Point inside = new Point(6.0, 6.0);
+		Point outside = new Point(100.0, 100.0);
+		assertEquals("failure - did not check for contains point correctly", true, tri.containsPoint(inside));
+		assertEquals("failure - did not check for contains point correctly", false, tri.containsPoint(outside));
 	}
 
 	@Test

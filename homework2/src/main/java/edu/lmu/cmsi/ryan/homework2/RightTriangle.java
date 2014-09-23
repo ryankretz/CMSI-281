@@ -41,13 +41,16 @@ public class RightTriangle {
 	// less than zero, then the point is inside the traingle. Otherwise, it is out of the triangle
 	public boolean containsPoint(Point p) {
 		boolean contains = false;
-		Point rTop = this.getTopLeft();
-		Point rBottom = new Point(this.getTopLeft().getX(), this.getTopLeft().getY()+ this.height);
-		Point rSide = new Point(this.getTopLeft().getX() + this.base, this.getTopLeft().getY());
-		double crossTB = rTop.crossProduct(p);
-		double crossTS = rBottom.crossProduct(p);
-		double crossBS = rSide.crossProduct(p);
-		if ((crossTB > 0 && crossTS > 0 && crossBS > 0) || (crossTB < 0 && crossTS < 0 && crossBS < 0)) {
+		double upperX = this.getTopLeft().getX();
+		double upperY = this.getTopLeft().getY();
+		Point rTop = new Point(upperX, upperY);
+		Point rBottom = new Point(upperX, upperY + this.height);
+		Point rSide = new Point(upperX + this.base, upperY);
+		double denom = (rBottom.getY() - rSide.getY())*(rTop.getX() - rSide.getX()) + ((rSide.getX() - rBottom.getX())*(rTop.getY() - rSide.getY()));
+		double a = ((rBottom.getY()-rSide.getY())*(p.getX()- rSide.getX()) + (rSide.getX() - rBottom.getX())*(p.getY()-rSide.getY()))/denom;
+		double b = ((rSide.getY()-rTop.getY())*(p.getX()- rSide.getX()) + (rTop.getX() - rSide.getX())*(p.getY()-rSide.getY()))/denom;
+		double c = 1 - a - b;
+		if ( 0 <= a && a <= 1 && 0 <= b && b <= 1 && 0 <= c && c <= 1) {
 			contains = true;
 		}
 		return contains;
