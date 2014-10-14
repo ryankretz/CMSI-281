@@ -8,6 +8,7 @@ public class App {
   private Scanner keyboard = null;
   private Engine engine;
 
+  //constructor of App
   public App() {
     System.out.println("Welcome to SuperSweetGame");
     System.out.println("Commands are: [N]ext frame or [Q]uit");
@@ -15,13 +16,12 @@ public class App {
     this.engine = new Engine(20);
   }
 
-  /*
-   Returns the lower case String of the keyboard input
-   */
+  //detects keyboard input
   private String getInput() {
     return this.keyboard.next().toLowerCase();
   }
 
+  //main method that runs the game
   public static void main(String[] args) {
     App theApp = new App();
     String input = theApp.getInput();

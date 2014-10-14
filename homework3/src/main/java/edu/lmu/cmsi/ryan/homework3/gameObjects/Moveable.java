@@ -7,6 +7,7 @@ public abstract class Moveable extends GameObject {
 	private Displacement displacement;
 	protected int hp;
 
+	//abstract constructor of a moveable object
 	public Moveable(int x, int y, int dx, int dy) {
 		super(x, y);
 		this.displacement = new Displacement(dx, dy);

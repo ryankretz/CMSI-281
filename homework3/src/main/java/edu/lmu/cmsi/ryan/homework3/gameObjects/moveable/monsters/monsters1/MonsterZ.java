@@ -9,10 +9,12 @@ import edu.lmu.cmsi.ryan.homework3.gameObjects.moveable.monsters.monsters1.Monst
 
 public class MonsterZ extends Monster1 {
 
+	//monsterz constructor
 	public MonsterZ(int x, int y, int dx, int dy) {
 		super(x, y, dx, dy);
 	}
 
+	//renders character for monsterz
 	@Override
 	public char getRenderedCharacter() {
 		return 'z';

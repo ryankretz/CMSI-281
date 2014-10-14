@@ -6,6 +6,7 @@ import edu.lmu.cmsi.ryan.homework3.Iface.*;
 public abstract class GameObject implements Render {
 	private Coordinate location;
 
+	//abstract constructor of a game object
 	public GameObject(int x, int y ){
 		this.location = new Coordinate(x,y);
 	}
