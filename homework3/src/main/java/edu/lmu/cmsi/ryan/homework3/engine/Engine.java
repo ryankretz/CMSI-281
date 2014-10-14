@@ -111,11 +111,9 @@ public class Engine {
 		for (int k = 0; k < this.moveable.length; k++) {
 			for (int i = 1; i < this.moveable.length - 1; i++) {
 				this.moveable[k].checkCollision(this.moveable[i++]);
-				this.moveable[k].update();
 			}
 			for (int j = 0; j < this.stationary.length; j++) {
 				this.moveable[k].checkCollision(this.stationary[j]);
-				this.moveable[k].update();
 			}
 		}    	
 	}	
