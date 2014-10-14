@@ -96,7 +96,7 @@ public class GameTest {
 
 	//tests to make sure monster's hp gets incremented after hitting rock
 	@Test
-	public void testMonsterHP() {
+	public void testMonsterHPwithRock() {
 		Engine engine = new Engine(20);
 		int shouldHit = 1;
 		engine.update();
