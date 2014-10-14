@@ -13,21 +13,25 @@ public abstract class Monster1 extends Moveable {
 		super(x, y, dx, dy);
 	}
 
-
+	//checks collision with game object (wall, rock, tree)
+	//if coordinates are the same as a wall, the monster1 coordinates 
+	//get inverted
 	@Override
 	public void checkCollision(GameObject o) {
 		if (this.getLocation().getX() == o.getLocation().getX() && this.getLocation().getY() == o.getLocation().getY()) {
-			//if game object coordinates are same as monsters's
-			//monsters's coordinates get inverted
+			//if game object coordinates are same as monster1's
 			if (o instanceof Stationary) {
 				if (!o.getClass().getSimpleName().equals("Wall")) {
-					//tree or rock hits monster
+					//if its not a wall
+					//tree or rock hits monser1
 					this.hp += 1;
 				} else {
+					//coordinates gets inverted if its a wall
 					getDisplacement().invert();
 				}
 			}
 			else if (o instanceof Player) {
+				//if its a player
 				double randomNum = Math.random();
 				if (randomNum <= 0.5) {
 					//player hits monster

@@ -13,20 +13,26 @@ public abstract class Boss extends Moveable {
 		super(x, y, dx, dy);
 	}
 
+	//checks collision with game object (wall, rock, tree)
+	//if coordinates are the same as a wall, the boss coordinates 
+	//get inverted
 	@Override
 	public void checkCollision(GameObject o) {
 		if (this.getLocation().getX() == o.getLocation().getX() && this.getLocation().getY() == o.getLocation().getY()) {
 			//if game object coordinates are same as boss's
-			//boss's coordinates get inverted
 			if (o instanceof Stationary) {
+				//if the object is stationary
 				if (!o.getClass().getSimpleName().equals("Wall")) {
+					//if its not a wall
 					//tree or rock hits boss
 					this.hp += 1;
 				} else {
+					//coordinates gets inverted if its a wall
 					getDisplacement().invert();
 				}
 			}
 			else if (o instanceof Player) {
+				//if its a player
 				double randomNum = Math.random();
 				if (randomNum <= 0.3) {
 					//player hits boss
