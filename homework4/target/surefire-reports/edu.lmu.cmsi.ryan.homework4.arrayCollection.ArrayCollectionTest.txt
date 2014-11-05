@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: edu.lmu.cmsi.ryan.homework4.arrayCollection.ArrayCollectionTest
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.081 sec

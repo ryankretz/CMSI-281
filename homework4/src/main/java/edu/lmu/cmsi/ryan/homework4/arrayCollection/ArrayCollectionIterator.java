@@ -27,4 +27,8 @@ public class ArrayCollectionIterator<A> implements Iterator<A> {
 			throw new IllegalArgumentException("Collection does not have a next value");
 		}
 	}
+
+	public void remove() {
+		throw new UnsupportedOperationException("Sorry, can't do that");
+	}
 }
