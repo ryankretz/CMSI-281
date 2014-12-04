@@ -1,0 +1,4 @@
+edu/lmu/cmsi/tree/IntegerBinarySearchTree.class
+edu/lmu/cmsi/tree/exception/ItemNotFoundException.class
+edu/lmu/cmsi/tree/exception/DuplicateItemException.class
+edu/lmu/cmsi/tree/node/BinaryTreeNode.class
