@@ -25,7 +25,7 @@ In the main method, I check to see if the root is null in which I create an empt
 
 ========
 
-All of the pre-written tests past as expected. 
+All of the pre-written tests pass as expected. 
 
 
 
